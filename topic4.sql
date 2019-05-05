@@ -113,10 +113,11 @@ mysql> SELECT id FROM storehouses_products LIMIT 5;
 +----+
 5 rows in set (0.00 sec)
 
-mysql> SELECT COUNT(id) * AVG(id) AS Multiplication FROM storehouses_products LIMIT 5;
-+----------------+
-| Multiplication |
-+----------------+
-|       120.0000 |
-+----------------+
+mysql> SELECT ROUND(EXP(SUM(LOG(id)))) from storehouses_products;
++--------------------------+
+| ROUND(EXP(SUM(LOG(id)))) |
++--------------------------+
+|                      120 |
++--------------------------+
 1 row in set (0.00 sec)
+
